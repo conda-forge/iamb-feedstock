@@ -1,5 +1,7 @@
 context:
   version: "0.0.13"
+  # short SHA of the commit the release tag points to (update on version bumps)
+  git_sha: eb9c3aa
 
 package:
   name: iamb
@@ -15,6 +17,9 @@ build:
     env:
       CARGO_PROFILE_RELEASE_STRIP: symbols
       CARGO_PROFILE_RELEASE_LTO: fat
+      # build.rs uses vergen-gitcl; the source tarball isn't a git worktree so
+      # the override is needed, otherwise `env!("VERGEN_GIT_SHA")` fails to compile
+      VERGEN_GIT_SHA: ${{ git_sha }}
     content:
       - if: unix
         then:
