@@ -1,5 +1,5 @@
 context:
-  version: "0.0.13"
+  version: "0.13.1"
 
 package:
   name: iamb
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ulyssa/iamb/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: a87b81d4cd60f72725b5b633c78ecb28fccc457f6319037fa9d12096fd6e3ef1
+  sha256: 8e919c19ef90f328d20e6e46720a26f0dea6e61901b8180fedbbacb473f131f1
 
 build:
   number: 0
